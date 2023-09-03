@@ -42,7 +42,7 @@ California_House_Price_Predictor/
 
 2. Install the required packages:
    ```bash
-   pip install -r requirements.txt  # You'll need to create this file with all your dependencies
+   pip install -r requirements.txt
    ```
 
 3. Run the model training and saving script:
