@@ -24,9 +24,9 @@ California_House_Price_Predictor/
 │
 ├── model_evaluation.py             # Script for in-depth model evaluation and visualization
 │
-├── rf_model.pkl                    # Saved Random Forest model
+├── rf_model.pkl                    # Saved Random Forest model (generated after running train_and_save_model.py)
 │
-├── scaler.pkl                      # Saved scaler
+├── scaler.pkl                      # Saved scaler (generated after running train_and_save_model.py)
 │
 └── templates/                      
     └── index.html                  # HTML template for Flask app
