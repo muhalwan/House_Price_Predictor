@@ -36,7 +36,7 @@ California_House_Price_Predictor/
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/California_House_Price_Predictor.git
+   git clone https://github.com/muhalwan/House_Price_Predictor.git
    cd California_House_Price_Predictor
    ```
 
