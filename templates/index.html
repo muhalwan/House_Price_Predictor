@@ -1,21 +1,63 @@
-<!-- templates/index.html -->
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>California House Price Predictor</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>California Housing Price Predictor</title>
+    <!-- Add Bootstrap CSS for styling -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <h2>Enter House Details:</h2>
-    <form action="/" method="post">
-        {% for feature in feature_names %}
-            <label for="{{ feature }}">{{ feature }}</label>
-            <input type="number" id="{{ feature }}" name="{{ feature }}" required><br><br>
-        {% endfor %}
-        <input type="submit" value="Predict">
-    </form>
-    {% if prediction %}
-        <h2>Predicted Price: ${{ prediction }}</h2>
-    {% endif %}
+    <div class="container mt-5">
+        <h2 class="text-center">California Housing Price Predictor</h2>
+        <form action="/" method="post" class="mt-5">
+            <div class="form-group">
+                <label for="MedInc">Median Income (MedInc)</label>
+                <input type="text" class="form-control" name="MedInc" id="MedInc" placeholder="Enter Median Income" required>
+                <small class="form-text text-muted">The median income in block (scaled).</small>
+            </div>
+            <div class="form-group">
+                <label for="HouseAge">House Age (HouseAge)</label>
+                <input type="text" class="form-control" name="HouseAge" id="HouseAge" placeholder="Enter House Age" required>
+                <small class="form-text text-muted">The median age of houses in block.</small>
+            </div>
+            <div class="form-group">
+                <label for="AveRooms">Average Rooms (AveRooms)</label>
+                <input type="text" class="form-control" name="AveRooms" id="AveRooms" placeholder="Enter Average Rooms" required>
+                <small class="form-text text-muted">Average number of rooms per household.</small>
+            </div>
+            <div class="form-group">
+                <label for="AveBedrms">Average Bedrooms (AveBedrms)</label>
+                <input type="text" class="form-control" name="AveBedrms" id="AveBedrms" placeholder="Enter Average Bedrooms" required>
+                <small class="form-text text-muted">Average number of bedrooms per household.</small>
+            </div>
+            <div class="form-group">
+                <label for="Population">Population</label>
+                <input type="text" class="form-control" name="Population" id="Population" placeholder="Enter Population" required>
+                <small class="form-text text-muted">Population in block.</small>
+            </div>
+            <div class="form-group">
+                <label for="AveOccup">Average Occupancy (AveOccup)</label>
+                <input type="text" class="form-control" name="AveOccup" id="AveOccup" placeholder="Enter Average Occupancy" required>
+                <small class="form-text text-muted">Average number of people living in a household.</small>
+            </div>
+            <div class="form-group">
+                <label for="Latitude">Latitude</label>
+                <input type="text" class="form-control" name="Latitude" id="Latitude" placeholder="Enter Latitude" required>
+                <small class="form-text text-muted">Latitude of the block.</small>
+            </div>
+            <div class="form-group">
+                <label for="Longitude">Longitude</label>
+                <input type="text" class="form-control" name="Longitude" id="Longitude" placeholder="Enter Longitude" required>
+                <small class="form-text text-muted">Longitude of the block.</small>
+            </div>
+            <button type="submit" class="btn btn-primary">Predict</button>
+        </form>
+        {% if prediction %}
+        <h3 class="mt-5">Predicted Median House Value: ${{ prediction }}</h3>
+        {% endif %}
+    </div>
+
 </body>
 </html>
